@@ -40,16 +40,23 @@ kartoteka/
    cd kartoteka
    ```
 
-2. Создайте виртуальное окружение:
+2. Создайте виртуальное и активируйте окружение:
    ```bash
    python -m venv venv
    source venv/bin/activate  # Для Linux/Mac
    venv\Scripts\activate     # Для Windows
+   venv\\Scripts\\activate.bat
    ```
 
 3. Установите зависимости:
    ```bash
    pip install -r requirements.txt
+   ```
+
+4. Docker и запуск PostgreSQL
+   ```bash
+   docker-compose up --build
+   docker-compose up -d db
    ```
 
 ## Запуск сервера
@@ -69,8 +76,3 @@ python client/main_window.py
 ```bash
 python -m unittest discover -s tests
 ```
-
-## Лицензия
-Этот проект лицензирован под MIT License.
-```
-
