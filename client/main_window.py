@@ -1,6 +1,6 @@
 import sys
 import requests
-from client.client import AddEquipmentDialog, EditEquipmentDialog
+from client import AddEquipmentDialog, EditEquipmentDialog
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QTableWidget, QTableWidgetItem, 
                              QPushButton, QVBoxLayout, QWidget, QFormLayout, QLineEdit, 
                              QMessageBox, QDialog)
