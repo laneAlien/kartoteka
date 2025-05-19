@@ -63,7 +63,8 @@ pip install -r requirements.txt
 ### 3. Запустить PostgreSQL и API-сервер
 
 ```bash
-docker-compose up -d db     # Только БД
+   docker-compose up --build
+   docker-compose up -d db
 python server/app.py        # Запуск Flask API
 ```
 
@@ -97,18 +98,8 @@ python -m unittest discover -s tests
 
 ---
 
-## ⚙️ Сборка .exe (только GUI)
-
-```bash
-pyinstaller --name kartoteka --onefile --windowed client/main_window.py
-```
-
----
-
 ## 📜 Лицензия
 
 Проект доступен под MIT License. Используйте и дорабатывайте свободно.
 
 ```
-
----
