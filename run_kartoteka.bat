@@ -1,9 +1,21 @@
 @echo off
-echo Запуск базы и API...
-cd /d %~dp0docker
-docker-compose up -d
+echo Проверка Docker...
+docker info >nul 2>&1
+IF ERRORLEVEL 1 (
+    echo ❌ Docker не запущен!
+    pause
+    exit /b
+)
 
-timeout /t 5
+cd /d %~dp0
 
-echo Запуск клиентского интерфейса...
+echo 🛠 Сборка образов...
+docker-compose build
+
+echo 🐘 Запуск PostgreSQL...
+docker-compose up -d db
+
+timeout /t 5 >nul
+
+echo 🚀 Запуск клиента...
 start "" "%~dp0dist\kartoteka.exe"
